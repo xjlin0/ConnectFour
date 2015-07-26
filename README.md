@@ -36,7 +36,7 @@ def upper_left_slices(board)
   return collections
 end
 ```
-But it only collect letters from half of the board, and rotations will be required to cover entire board and the other diagonal.
+But it only collect letters from upper left half of the board, and rotations will be required to cover entire board and the other diagonal.
 
 Therefore, I changed my mind. To check the diagonally connected chips, I first slide the rectangular board to parallelogram, and vertically slice would be diagonally connected chips:
 
@@ -53,6 +53,7 @@ d e f 0
 
 #The '369' is the originally diagonally connected chips.
 ```
+In this way I can easily get and check the all arrays of strings in all directions. In addition to board dimensions and the number of adjacent chip to win, the player color name or number of players are also customizable, by changing/adding @chips hash for initializing the Game instance with the hash of {"Color" => "Winning message"}, as long as the color initial are not redundant.
 
 ## My thoughts
 Overall It's a fun game, though I never played it in my life and I'd like to play it with my son now!  It's good to practice accessing nested arrays.  It's bad that it's addictive!
